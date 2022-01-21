@@ -1,5 +1,5 @@
 {% set name = "eth-keyfile" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 
 package:
@@ -8,24 +8,24 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 939540efb503380bc30d926833e6a12b22c6750de80feef3720d79e5a79de47d
+  sha256: d30597cdecb8ccd3b56bb275cd86fcdc7a279f86eafa92ddc49f66512f0bff67
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools-markdown
   run:
     - cytoolz >=0.9.0,<1.0.0
-    - eth-keys >=0.1.0-beta.4,<1.0.0
-    - eth-utils >=1.0.0-beta.1,<2.0.0
+    - eth-keys >=0.4.0,<0.5.0
+    - eth-utils >=2.0.0,<3.0.0
     - pycryptodome >=3.4.7,<4.0.0
-    - python
+    - python >=3.6
 
 test:
   imports:
