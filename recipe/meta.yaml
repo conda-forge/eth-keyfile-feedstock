@@ -1,5 +1,5 @@
 {% set name = "eth-keyfile" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d30597cdecb8ccd3b56bb275cd86fcdc7a279f86eafa92ddc49f66512f0bff67
+  sha256: 471be6e5386fce7b22556b3d4bde5558dbce46d2674f00848027cb0a20abdc8c
 
 build:
   number: 0
@@ -24,7 +24,7 @@ requirements:
     - cytoolz >=0.9.0,<1.0.0
     - eth-keys >=0.4.0,<0.5.0
     - eth-utils >=2.0.0,<3.0.0
-    - pycryptodome >=3.4.7,<4.0.0
+    - pycryptodome >=3.6.6,<4.0.0
     - python >=3.6
 
 test:
