@@ -18,13 +18,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools-markdown
   run:
     - eth-utils >=2.0.0
     - eth-keys >=0.4.0
     - pycryptodome >=3.6.6,<4.0.0
-    - python >=3.6
+    - python >=3.8
 
 test:
   imports:
