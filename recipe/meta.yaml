@@ -1,5 +1,5 @@
 {% set name = "eth-keyfile" %}
-{% set version = "0.8.1" %}
+{% set version = "0.9.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9708bc31f386b52cca0969238ff35b1ac72bd7a7186f2a84b86110d3c973bec1
+  sha256: c7a8bc6af4527d1ab2eb1d1b949d59925252e17663eaf90087da121327b51df6
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
