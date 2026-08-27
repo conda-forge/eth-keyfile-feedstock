@@ -1,5 +1,5 @@
 {% set name = "eth-keyfile" %}
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 
 
 package:
@@ -7,13 +7,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: c7a8bc6af4527d1ab2eb1d1b949d59925252e17663eaf90087da121327b51df6
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 3003b20000d68203e8fbf45456851a524f859a7432d2fae73be4a9aebeb4b8e1
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION="{{ version }}"
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -21,8 +23,9 @@ requirements:
     - setuptools
     - python {{ python_min }}
     - setuptools-markdown
+    - setuptools-scm
   run:
-    - eth-keys >=0.4.0
+    - eth-keys >=0.8.0
     - eth-utils >=2.0.0
     - py_ecc >=5.2.0
     - pycryptodome >=3.6.6,<4.0.0
